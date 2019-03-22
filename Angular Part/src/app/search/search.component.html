@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<h5 class="text-center">Search Item</h5>
+
+  <hr class="hr-primary"><br>
+  <form>
+    <div class="form-row " >
+      <div class="form-group col-md-6">
+          <label id="lb">*Title</label>
+          <input type="text" class="form-control" [(ngModel)]="title" id="tb" name="title" placeholder="Enter Title">
+          
+      </div>
+    </div>
+
+     <hr class="hr-danger"><br>
+
+    <div>
+        <h5 *ngFor="let post of items ">{{post}} </h5>    
+    </div>
+    <div class="container-fluid">
+
+      <button type="submit" class="btn btn-primary btn-lg float-sm-right" (click)="searchItem()">Search</button>
+      <button type="reset" class="btn btn-secondary btn-lg float-sm-right" >Clear</button>
+
+    </div>
+    
+  </form>

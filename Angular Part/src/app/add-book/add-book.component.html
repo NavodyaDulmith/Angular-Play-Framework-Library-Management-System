@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<h5 class="text-center">Add Book</h5>
+<hr class="hr-primary"><br>
+
+<h6>Number Of Free Spaces - {{ freeSpace }} </h6>
+  <hr class="hr-primary"><br>
+  <form>
+    <div class="form-row " >
+      <div class="form-group col-md-6">
+          <label id="lb"class="hr-success">*ISBN</label>
+          <input type="number" class="form-control" [(ngModel)]="isbn" id="tb" name="isbn" placeholder="Enter ISBN" >
+          
+      </div>
+      <div class="form-group col-md-6">
+          <label id="lb" for="name"class="hr-success">*Title</label>
+          <input type="text"  [(ngModel)] = "title" id="tb" name="title" class="form-control" placeholder="Enter Title" >
+      </div>
+    </div>
+    <div class="form-group">
+        <label id="lb"class="hr-success" >*Sector</label>
+        <input type="text" [(ngModel)] = "sector" id="tb" name="sector" class="form-control" placeholder=" Enter Sector"  >
+    </div>
+    <div class="form-group">
+    
+        <label id="lb"class="hr-success" >*Publication Date</label>
+        <input type="text" [(ngModel)] = "publicationDate" id="tb" name="publicationDate"  class="form-control" placeholder="Enter Publication Date" >
+      </div>
+      <div class="form-group">
+        
+        <label id="lb"class="hr-success">*Total Num Of Pages</label> 
+        <input type="number" [(ngModel)]="totalPages" id="tb" name="totalPages" class="form-control" placeholder="Enter Total Number Of Pages">
+    
+      </div>
+      <div class="form-group">
+
+        <label id="lb"class="hr-success" >*Publisher Name </label> 
+        <input type="text" [(ngModel)] = "publisherfName" id="tb" name="publisherfName" class="form-control" placeholder="Enter Publisher Name"  >
+    
+      </div>
+      <div class="form-group">
+        
+        <label id="lb" class="hr-success">*Author  Names </label> 
+        <input type="text" [(ngModel)] = "authorfName" id="tb" name="authorfName"  class="form-control" placeholder="Enter Author  Names" >
+  
+     </div>
+
+     <hr class="hr-danger"><br>
+    <div>
+        <h5 *ngFor="let post of posts ">{{post}} </h5>    
+    </div>
+    
+    <div class="container-fluid">
+
+      <button type="submit" class="btn btn-primary btn-lg float-sm-right" (click)="addbook()">Add</button>
+      <button type="reset" class="btn btn-secondary btn-lg float-sm-right" >Clear</button>
+
+    </div>
+    
+  </form>

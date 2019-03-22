@@ -1,0 +1,80 @@
+<app-header></app-header>
+ <h5 class="text-center">Borrow Item</h5>
+
+  <hr class="hr-primary"><br>
+  
+  <form>
+    <div class="form-row " >
+      <div class="form-group col-md-6">
+          <label id="lb">*ISBN</label>
+          <input type="number" class="form-control" [(ngModel)]="isbn" id="tb" name="isbn" placeholder="Enter ISBN">
+          
+      </div>
+      
+    </div>
+
+     <hr class="hr-danger"><br>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+
+          <label id="lb" for="name">*Reader ID </label>
+          <input type="number" [(ngModel)] = "readerID" id="tb" name="readerID"  class="form-control" placeholder="Enter Reader ID " ><br>
+
+          <label id="lb">*Reader Name</label>
+          <input type="text" [(ngModel)]="readerName" id="tb" name="readerName" class="form-control" placeholder="Enter Reader Name "><br>
+    
+          <label id="lb" for="name">*Reader Mobile No</label> 
+          <input type="text" [(ngModel)] = "readerMobileno" id="tb" name="readerMobileno" class="form-control" placeholder="Enter Reader Mobile Number "  ><br>
+    
+          <label id="lb" for="name">*Reader Email </label> 
+          <input type="text" [(ngModel)] = "readerEmali" id="tb" name="readerEmali" class="form-control" placeholder="Enter Reader Email "  ><br>
+
+      </div>
+
+      
+
+      <div class="form-group col-md-1">
+          <label id="lb">*Borrowing  Year</label>
+          <input type="number" [(ngModel)]="bYear" id="tb" name="bYear"class="form-control" placeholder="Year " >
+        </div>    
+      <div class="form-group col-md-1">
+          <label id="lb" for="name">*Month</label> 
+          <input type="number" [(ngModel)] = "bMonth" id="tb" name="bMonth" class="form-control" placeholder="Month "  >
+        </div>   
+      <div class="form-group col-md-1"> 
+          <label id="lb" for="name">*Day </label> 
+          <input type="number" [(ngModel)] = "bDay" id="tb" name="bDay" class="form-control" placeholder="Day "  >
+        
+      </div>
+
+      <div class="form-group col-md-1">
+          <label id="lb">*Hour</label> 
+          <input type="number" [(ngModel)]="bHour" id="tb" name="bHour" value="Hour"class="form-control" placeholder="Hour ">
+      </div>    
+        
+      <div class="form-group col-md-1">
+          <label id="lb" for="name">*Minute</label> 
+          <input type="number" [(ngModel)] = "bMin" id="tb" name="bMin" class="form-control" placeholder="Minute "  >
+      </div> 
+
+
+    </div>
+
+    <div>
+        <h5 *ngFor="let post of posts ">{{post}} </h5>    
+    </div>
+
+    <div class="container-fluid">
+
+      <button type="submit" class="btn btn-primary  float-sm-right" (click)="borrow()">Borrow</button>
+      <button type="submit" class="btn btn-secondary  float-sm-right" (click)="makeReservation()">Make a Reservation</button>
+      <button type="reset" class="btn btn-secondary  float-sm-right" >Clear</button>
+
+    </div>
+
+    <div>
+        <h5 *ngFor="let post of res ">{{post}} </h5>    
+    </div>
+    
+  </form>

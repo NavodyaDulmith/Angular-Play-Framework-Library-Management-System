@@ -1,0 +1,65 @@
+<app-header></app-header>
+<h5 class="text-center">Add DVD</h5>
+<hr class="hr-primary"><br>
+<h6>Number Of Free Spaces - {{ freeSpace }} </h6>
+  <hr class="hr-primary"><br>
+  
+  <form>
+    <div class="form-row " >
+      <div class="form-group col-md-6">
+          <label id="lb">*ISBN</label>
+          <input type="number" class="form-control" [(ngModel)]="isbn" id="tb" name="isbn" placeholder="Enter ISBN">
+          
+      </div>
+      <div class="form-group col-md-6">
+          <label id="lb" for="name">*Title</label>
+          <input type="text"  [(ngModel)] = "title" id="tb" name="title" class="form-control" placeholder="Enter Title" >
+      </div>
+    </div>
+    <div class="form-group">
+        <label id="lb" >*Sector</label>
+        <input type="text" [(ngModel)] = "sector" id="tb" name="sector" class="form-control" placeholder=" Enter Sector"  >
+    </div>
+    <div class="form-group">
+    
+        <label id="lb" >*Publication Date</label>
+        <input type="text" [(ngModel)] = "publicationDate" id="tb" name="publicationDate"  class="form-control" placeholder="Enter Publication Date" >
+      </div>
+      <div class="form-group">
+        
+        <label id="lb">*Available Subtitles</label> 
+        <input type="text" [(ngModel)]="availableSubtitles" id="tb" name="availableSubtitles" class="form-control" placeholder="Enter Total Number Of Pages">
+    
+      </div>
+      <div class="form-group">
+
+        <label id="lb" >*Available Language </label> 
+        <input type="text" [(ngModel)] = "availableLanguages" id="tb" name="availableLanguages" class="form-control" placeholder="Enter Publisher Name"  >
+    
+      </div>
+      <div class="form-group">
+        
+        <label id="lb" >Producer  Name </label> 
+        <input type="text" [(ngModel)] = "producerName" id="tb" name="producerName"  class="form-control" placeholder="Enter Author  Names" >
+  
+     </div>
+     <div class="form-group">
+        
+      <label id="lb" >Actor  Names </label> 
+      <input type="text" [(ngModel)] = "actorNames" id="tb" name="actorNames"  class="form-control" placeholder="Enter Author  Names" >
+
+   </div>
+
+     <hr class="hr-danger"><br>
+
+    <div>
+        <h5 *ngFor="let post of posts ">{{post}} </h5>    
+    </div>
+    <div class="container-fluid">
+
+      <button type="submit" class="btn btn-primary btn-lg float-sm-right" (click)="addDvd()">Add</button>
+      <button type="reset" class="btn btn-secondary btn-lg float-sm-right" >Clear</button>
+
+    </div>
+    
+  </form>

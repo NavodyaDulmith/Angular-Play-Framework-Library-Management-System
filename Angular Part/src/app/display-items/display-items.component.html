@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div>
+  
+   <h3 class="text-center"> Displaying Items !</h3>
+   <p>Available - &#9989; Not Available -&#10060;</p>
+  
+</div>
+<hr class="hr-primary"><br>
+
+<table class="table table-hover" >
+  <tr>
+    <th>Type </th>
+    <th>ISBN Number</th>
+    <th>Title </th>
+    <th>Condition</th>
+  </tr>
+
+  <tr class =" hr-success" *ngFor="let post of books">
+      <td>Book</td>
+      <td>{{post.isbn}} </td>
+      <td>{{post.title}} </td>
+      <td><ng-container *ngIf="post.currentReader.readerID === 0;else second">&#9989;</ng-container>
+        <ng-template #second>&#10060;</ng-template>
+      </td>
+  </tr>
+  <tr class =" hr-warning" *ngFor="let post of posts">
+      <td>DVD</td>
+      <td>{{post.isbn}} </td>
+      <td>{{post.title}} </td>
+      <td><ng-container *ngIf="post.currentReader.readerID === 0;else second">&#9989;</ng-container>
+        <ng-template #second>&#10060;</ng-template>
+      </td>
+  </tr>
+
+
+</table>
